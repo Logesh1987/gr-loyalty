@@ -1,11 +1,6 @@
-const es = e => {
-    console.log('85')
-}
-const ab = e => {
-    console.log('6');
-}
-
-window.onload = function() {
-    es();
-    ab();
-}
+var gratisfaction = angular.module('grLoyalty', [])
+    
+gratisfaction.controller('grController', function($scope) {
+    $scope.activeMenu = 4;
+    $scope.activeClaimCard = null;
+})

@@ -1,15 +1,423 @@
-<html>
+<html ng-app="grLoyalty">
 
 <head>
     <title>GR - Loyalty</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/851f10aceb.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="scripts/main.js"></script>
 </head>
 
 <body>
-    <h2>asdas</h2>
+    <div ng-controller="grController" class="loyalWrapper">
+        <a href="#" class="loyalClose"><i class="far fa-times-circle"></i></a>
+        <div class="loyalUserHead">
+            <img src="images/comp/img-header.jpg" alt="">
+        </div>
+        <div class="loyalBody" style="background-image: url(images/comp/bg_pattern.jpg);">
+            <div class="loyalHead">
+                <h1>Loyalty & Rewards Program</h1>
+                <div>
+                    <div class="loyalProfile">
+                        <i class="icon-profile"></i>
+                        <span>+500</span>
+                    </div>
+                    <a href="#" class="hamMenu"></a>
+                </div>
+            </div>
+            <nav class="loyalMainNav">
+                <a href="#" ng-click="activeMenu = 1" ng-class="{active: activeMenu === 1}"><i
+                        class="icon-home"></i></a>
+                <a href="#" ng-click="activeMenu = 2" ng-class="{active: activeMenu === 2}"><i
+                        class="icon-earn"></i><span>Earn</span></a>
+                <a href="#" ng-click="activeMenu = 3" ng-class="{active: activeMenu === 3}"><i
+                        class="icon-referral"></i><span>Referral</span></a>
+                <a href="#" ng-click="activeMenu = 4" ng-class="{active: activeMenu === 4}"><i
+                        class="icon-claim"></i><span>Claim</span></a>
+            </nav>
+            <div class="loyalViews">
+                <div class="homeView" ng-show="activeMenu === 1">
+                    <div class="loyalWelcome my-4">
+                        <p>Welcome to Happy Perks, a rewards program! Its FREE to join & filled with Perks!</p>
+                        <p class="themeColor"><strong>Earn 250 welcome Points!</strong></p>
+                        <button class="btn">Create Account</button>
+                        <hr>
+                        <p>Already have an account? <a href="#" class="themeColor">Sign in</a></p>
+                    </div>
+                    <div class="loyalCover my-4">
+                        <span>
+                            Get 1 points for every $1 you spend!
+                        </span>
+                    </div>
+                    <div class="loyalBirthdayHeader d-flex justify-content-between">
+                        <div>
+                            <i class="icon-cake"></i>
+                            <span class="pl-2">Enter your birthday</span>
+                        </div>
+                        <div>
+                            <div class="starPoints">100</div>
+                        </div>
+                    </div>
+                    <p class="text-center my-4">
+                        <a href="#" style="color: #ccc;">continue shopping</a>
+                    </p>
+                </div>
+                <div class="earnView" ng-show="activeMenu === 2">
+                    <div class="loyalNotify my-3">
+                        <p>Google's free service instantly translates words, phrases, and web pages between English and
+                            over
+                            100.</p>
+                        <span><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="loyalNotify my-3">
+                        <p>Bem-vinda! Você só precisa confirmar que podemos enviar seus e-mails de atividades do
+                            programa de recompensas para você.</p>
+                        <span class="btn btn-theme rounded-pill">okay</span>
+                    </div>
+                    <div class="loyalCover my-4">
+                        <span>
+                            Get 1 points for every $1 you spend!
+                        </span>
+                    </div>
+                    <div class="loyalBirthdayHeader d-flex justify-content-between">
+                        <div>
+                            <i class="icon-cake"></i>
+                            <span class="pl-2">Enter your birthday</span>
+                        </div>
+                        <div>
+                            <div class="starPoints">100</div>
+                        </div>
+                    </div>
+                    <div class="bonusBox d-flex align-items-center flex-nowrap my-4">
+                        <figure>
+                            <i class="icon-claim"></i>
+                        </figure>
+                        <div>
+                            <h5>Bonus Points text can come here. <br> 2nd line to be here</h5>
+                            <p>Bonus points description</p>
+                        </div>
+                    </div>
+                    <p class="text-center my-4">
+                        <a href="#" style="color: #ccc;">continue shopping</a>
+                    </p>
+                </div>
+                <div class="referralView" ng-show="activeMenu === 3">
+                    <h5 class="text-center">Refer friends. Earn rewards!</h5>
+                    <div class="referralInfoBox d-flex justify-content-between pt-5">
+                        <div class="text-center p-3">
+                            <i class="icon-refer-you"></i>
+                            <h5 class="mt-2">You Get</h5>
+                            <p class="mb-0">10% off coupon on total order value + 100 reward points</p>
+                        </div>
+                        <div class="text-center p-3">
+                            <i class="icon-refer-friend"></i>
+                            <h5 class="mt-2">You Friends Get</h5>
+                            <p class="mb-0">100 Happy Cents off on total order value</p>
+                        </div>
+                    </div>
+                    <div class="login-signup themeBg px-5 py-3 my-4 text-center rounded">
+                        <p>Sign up now to Earn rewards for inviting your friends to sign up to our promotion</p>
+                        <a href="#" class="btn btn-outline-light my-3">Create Account</a>
+                        <hr>
+                        <p class="mb-0"><small>Earn 100 happy cents welcome points!</small></p>
+                    </div>
+                    <div class="ifDash">
+                        <div class="inviteFriends themeBg px-5 py-3 my-4 text-center rounded">
+                            <p>Earn rewards for inviting your friends to sign up to our promotion</p>
+                            <div class="border border-light text-left py-2 pl-3 pr-5 position-relative copyBox">
+                                https://bit.ly/3gH3ovC
+                                <button class="position-absolute btn btn-light"><i class="icon-copy"></i></button>
+                            </div>
+                            <nav class="mt-3 px-3 d-flex justify-content-around themeTextColor">
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            </nav>
+                        </div>
+                        <div class="inviteDash themeColor d-flex p-3 bg-white rounded">
+                            <div
+                                class="text-body p-3 flex-grow-1 d-flex flex-column align-items-center justify-content-center border-right">
+                                <p class="m-0">Referral Goal </p>
+                                <p class="m-2">
+                                    <i class="fas fa-check-circle themeColor"></i>
+                                    <i class="fas fa-check-circle themeColor"></i>
+                                    <i class="fas fa-check-circle themeColor"></i>
+                                    <i class="fas fa-circle text-secondary"></i>
+                                    <i class="fas fa-circle text-secondary"></i>
+                                </p>
+                                <p class="m-0">2/5</p>
+                            </div>
+                            <div
+                                class="text-body p-3 flex-grow-1 d-flex flex-column align-items-center justify-content-center">
+                                <p class="m-0 mb-2">Referral Rewards</p>
+                                <p class="m-0"><u>1000 Points</u></p>
+                                <p class="m-0"><u>04 Coupons</u></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="referralCouponList">
+                        <div class="rCard shadow-sm bg-white rounded d-flex align-items-start mb-3">
+                            <div class="text-secondary p-3 pr-4 text-right date"><small>24 Apr. 2020
+                                    <br />14:22:03</small>
+                            </div>
+                            <div class="p-3 pl-4">
+                                <div class="badge badge-pill themeBg mb-3"><i class="icon-star"></i> 1000 Happy Cents
+                                </div>
+                                <h6>Coupon Details</h6>
+                                <p class="m-0 text-secondary">
+                                    Incognito support added. Be sure to check the Options to see...
+                                </p>
+                                <div class="coupon rounded py-2 px-3 mt-4">
+                                    <span>GRkY1URWG2</span>
+                                    <a href="#" class="p-3"><i class="icon-copy"></i></a>
+                                </div>
+                                <div class="d-flex mt-3">
+                                    <img src="images/profile.png" class="rounded-circle">
+                                    <span class="pl-2">robert.junior@starwars.net</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rCard shadow-sm bg-white rounded d-flex align-items-start mb-3">
+                            <div class="text-secondary p-3 pr-4 text-right date"><small>24 Apr. 2020
+                                    <br />14:22:03</small>
+                            </div>
+                            <div class="p-3 pl-4">
+                                <div class="badge badge-pill themeBg mb-3"><i class="icon-star"></i> 1000 Happy Cents
+                                </div>
+                                <h6>Coupon Details</h6>
+                                <p class="m-0 text-secondary">
+                                    Incognito support added. Be sure to check the Options to see...
+                                </p>
+                                <div class="coupon rounded py-2 px-3 mt-4">
+                                    <span>GRkY1URWG2</span>
+                                    <a href="#" class="p-3"><i class="icon-copy"></i></a>
+                                </div>
+                                <div class="d-flex mt-3">
+                                    <img src="images/profile.png" class="rounded-circle">
+                                    <span class="pl-2">robert.junior@starwars.net</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="claimView" ng-show="activeMenu === 4">
+                    <div class="totalClaims py-3">
+                        <div class="badge badge-pill themeBg"><i class="icon-star"></i> 17750 Happy Cents</div>
+                    </div>
+                    <div class="claimList">
+                        <div ng-click="activeClaimCard = 1" ng-class="{active : activeClaimCard === 1}"
+                            class="claimCard mb-4 d-flex rounded shadow">
+                            <figure class="m-0">
+                                <img class="w-100" src="images/comp/2.jpg" alt="">
+                                <figcaption class="bg-white position-relative p-2 m-0">
+                                    <span>Gift name </span>
+                                    <div class="floater rounded-circle bg-white shadow-lg">
+                                        <p>1000</p>
+                                        <small>HAPPY CENTS</small>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <div ng-show="activeClaimCard === 1" class="bg-white p-2">
+                                <h6>$10 Off Coupons</h6>
+                                <p>Redeem $5 off coupon for 500 points</p>
+                                <a href="#" ng-click="showClaim=true; $event.preventDefault();"
+                                    class="btn btn-theme">Claim now</a>
+                            </div>
+                        </div>
+                        <div ng-click="activeClaimCard = 2" ng-class="{active : activeClaimCard === 2}"
+                            class="claimCard mb-4 d-flex rounded shadow">
+                            <figure class="m-0">
+                                <img class="w-100" src="images/comp/2.jpg" alt="">
+                                <figcaption class="bg-white position-relative p-2 m-0">
+                                    <span>Gift name </span>
+                                    <div class="floater rounded-circle bg-white shadow-lg">
+                                        <p>1000</p>
+                                        <small>HAPPY CENTS</small>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <div ng-show="activeClaimCard === 2" class="bg-white p-2">
+                                <h6>$10 Off Coupons</h6>
+                                <p>Redeem $5 off coupon for 500 points</p>
+                                <a href="#" ng-click="showClaim=true; $event.preventDefault();"
+                                    class="btn btn-theme">Claim now</a>
+                            </div>
+                        </div>
+                        <div ng-click="activeClaimCard = 3" ng-class="{active : activeClaimCard === 3}"
+                            class="claimCard mb-4 d-flex rounded shadow">
+                            <figure class="m-0">
+                                <img class="w-100" src="images/comp/2.jpg" alt="">
+                                <figcaption class="bg-white position-relative p-2 m-0">
+                                    <span>Gift name </span>
+                                    <div class="floater rounded-circle bg-white shadow-lg">
+                                        <p>1000</p>
+                                        <small>HAPPY CENTS</small>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <div ng-show="activeClaimCard === 3" class="bg-white p-2">
+                                <h6>$10 Off Coupons</h6>
+                                <p>Redeem $5 off coupon for 500 points</p>
+                                <a href="#" ng-click="showClaim=true; $event.preventDefault();"
+                                    class="btn btn-theme">Claim now</a>
+                            </div>
+                        </div>
+                        <div ng-click="activeClaimCard = 4" ng-class="{active : activeClaimCard === 4}"
+                            class="claimCard mb-4 d-flex rounded shadow">
+                            <figure class="m-0">
+                                <img class="w-100" src="images/comp/2.jpg" alt="">
+                                <figcaption class="bg-white position-relative p-2 m-0">
+                                    <span>Gift name </span>
+                                    <div class="floater rounded-circle bg-white shadow-lg">
+                                        <p>1000</p>
+                                        <small>HAPPY CENTS</small>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <div ng-show="activeClaimCard === 4" class="bg-white p-2">
+                                <h6>$10 Off Coupons</h6>
+                                <p>Redeem $5 off coupon for 500 points</p>
+                                <a href="#" ng-click="showClaim=true; $event.preventDefault();"
+                                    class="btn btn-theme">Claim now</a>
+                            </div>
+                        </div>
+                        <div ng-click="activeClaimCard = 5" ng-class="{active : activeClaimCard === 5}"
+                            class="claimCard mb-4 d-flex rounded shadow">
+                            <figure class="m-0">
+                                <img class="w-100" src="images/comp/2.jpg" alt="">
+                                <figcaption class="bg-white position-relative p-2 m-0">
+                                    <span>Gift name </span>
+                                    <div class="floater rounded-circle bg-white shadow-lg">
+                                        <p>1000</p>
+                                        <small>HAPPY CENTS</small>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <div ng-show="activeClaimCard === 5" class="bg-white p-2">
+                                <h6>$10 Off Coupons</h6>
+                                <p>Redeem $5 off coupon for 500 points</p>
+                                <a href="#" ng-click="showClaim=true; $event.preventDefault();"
+                                    class="btn btn-theme">Claim now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="claimConfirm d-flex align-items-center justify-content-center" ng-show="showClaim">
+                        <div class="text-center bg-white p-5 rounded">
+                            <p class="mb-4">Are you sure want to claim this?</p>
+                            <nav class="d-flex">
+                                <button class="w-50 mx-2 btn btn-outline-dark"
+                                    ng-click="showClaim=false">Cancel</button>
+                                <button class="w-50 mx-2 btn btn-theme">Ok</button>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="referralBlock">
+            </div>
+            <div class="profileBlock">
+                <div class="totalPoints shadow my-3">
+                    <i class="icon-star"></i>
+                    <strong class="px-3">28500</strong>
+                    <span>Redeemable <br />Points</span>
+                </div>
+                <div class="shadow-lg bg-white rounded p-4 position-relative mb-4">
+                    <div class="profilePic">
+                        <span class="shadow bg-white">
+                            <i class="icon-profile"></i>
+                        </span>
+                    </div>
+                    <h5 class="w-75">Complete your profile and get 500 points!</h5>
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        robert.downey@gmail.com
+                    </p>
+                    <form class="m-0">
+                        <div class="formController">
+                            <label for="">Name</label>
+                            <input type="text">
+                        </div>
+                        <div class="formController">
+                            <label for="">Gender</label>
+                            <select>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="formController">
+                            <label for="">Country</label>
+                            <select>
+                                <option value="United States">United States</option>
+                                <option value="India">India</option>
+                            </select>
+                        </div>
+                        <div class="textcenter-right mt-4">
+                            <button class="btn btn-outline-secondary">Cancel</button>
+                            <button type="submit" class="btn btn-theme">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="profPoints rounded bg-white py-4 px-3 d-flex align-items-start">
+                    <i class="bg-white themeColor  shadow-lg rounded-circle icon-star p-4 border"></i>
+                    <div class="flex-grow-1 pl-3">
+                        <strong class="themeColor">2800</strong>
+                        <p>Redeemable Points</p>
+                        <hr>
+                        <a href="#" class="themeColor">
+                            View Rewards & Claim
+                            <i class="ml-2 fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="profNav rounded bg-white px-4 py-2 my-3">
+                    <a href="#" class="d-flex align-items-center">
+                        <i
+                            class="d-flex align-items-center justify-content-center icon-hoursglass themeColor shadow-lg rounded-circle border"></i>
+                        <span class="flex-grow-1 textcenter-secondary py-4 mx-3 border-bottom">
+                            Latest Exclusion<br />
+                            Period Happy Cents
+                        </span>
+                    </a>
+                    <a href="#" class="d-flex align-items-center">
+                        <i
+                            class="d-flex align-items-center justify-content-center icon-star themeColor shadow-lg rounded-circle border"></i>
+                        <span class="position-relative flex-grow-1 text-secondary py-4 mx-3 border-bottom">
+                            Available Happy Cents
+                            <small class="d-block text-dark"><u>Get more happy cents</u></small>
+                        </span>
+                    </a>
+                    <a href="#" class="d-flex align-items-center">
+                        <i
+                            class="d-flex align-items-center justify-content-center icon-history themeColor shadow-lg rounded-circle border"></i>
+                        <span class="position-relative flex-grow-1 text-secondary py-4 mx-3">
+                            Redeemed Happy Cents
+                            <small class="d-block text-dark"><u>View transaction history</u></small>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="loyalFooter">
+                <img src="images/comp/img-footer.jpg" alt="">
+            </div>
+        </div>
+    </div>
 </body>
 <script src="scripts/main.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
 
 </html>

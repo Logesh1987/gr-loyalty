@@ -1,7 +1,617 @@
-body {
-  background-color: #f00;
+@import 'icons.css';
+.themeColor {
+  color: #ffc300;
 }
-body h2 {
-  color: green;
-  font-size: 40px;
+.themeBg {
+  background-color: #ffc300;
+}
+.themeTextColor {
+  color: #fff;
+}
+.btn-theme {
+  background-color: #ffc300;
+}
+.btn-theme:hover {
+  -webkit-filter: hue-rotate(-5deg);
+          filter: hue-rotate(-5deg);
+}
+body {
+  font-family: 'Inter', sans-serif;
+}
+.loyalWrapper {
+  margin: 80px auto;
+  max-width: 460px;
+  position: relative;
+}
+.loyalWrapper .loyalClose {
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  border-radius: 50%;
+  font-size: 1.5em;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+}
+.loyalUserHead {
+  overflow: hidden;
+  border-radius: 10px;
+}
+.loyalUserHead img {
+  width: 100%;
+}
+.loyalBody {
+  min-height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 30px 30px 0;
+}
+.loyalFooter {
+  background-color: #fff;
+  margin: 0 -30px;
+}
+.loyalFooter img {
+  width: 100%;
+}
+.loyalHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.loyalHead h1 {
+  color: #fff;
+  font-size: 1.5em;
+  margin: 0;
+}
+.loyalHead > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.loyalHead .loyalProfile {
+  width: 3em;
+  height: 3em;
+  margin: 0 1em;
+  display: inline-block;
+  background-color: #fff;
+  border: 2px dashed #ffc300;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+}
+.loyalHead .loyalProfile i {
+  color: #ffc300;
+  font-size: 1.9em;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+  display: block;
+}
+.loyalHead .loyalProfile span {
+  padding: 5px;
+  background-color: #ffc300;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9em;
+  line-height: 1;
+  min-width: 100%;
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+}
+.loyalHead .hamMenu {
+  display: block;
+  width: 2em;
+}
+.loyalHead .hamMenu:before,
+.loyalHead .hamMenu:after {
+  background-color: #fff;
+  content: '';
+  display: block;
+  height: 3px;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+.loyalHead .hamMenu:before {
+  -webkit-box-shadow: 0 10px 0 #fff;
+          box-shadow: 0 10px 0 #fff;
+  margin-bottom: 16px;
+}
+.loyalHead .hamMenu.active:before {
+  -webkit-box-shadow: 0 0 0 #fff;
+          box-shadow: 0 0 0 #fff;
+  -webkit-transform: translateY(10px) rotate(45deg);
+          transform: translateY(10px) rotate(45deg);
+}
+.loyalHead .hamMenu.active:after {
+  -webkit-transform: translateY(-10px) rotate(-45deg);
+          transform: translateY(-10px) rotate(-45deg);
+}
+.loyalMainNav {
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 20px 24px rgba(38, 38, 38, 0.3);
+          box-shadow: 0 20px 24px rgba(38, 38, 38, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.9em;
+  padding: 0 0.5em;
+  margin: 2em 0;
+}
+.loyalMainNav a {
+  text-transform: uppercase;
+  padding: 1em;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-decoration: none;
+  color: #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+.loyalMainNav a:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+.loyalMainNav a.active {
+  color: #ffc300;
+}
+.loyalMainNav a.active:after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  bottom: 0;
+  height: 4px;
+  background-color: #ffc300;
+}
+.loyalMainNav i {
+  font-size: 1.5em;
+}
+.loyalMainNav span {
+  padding-left: 0.5em;
+  color: #808080;
+}
+.loyalNotify {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 30px 30px 30px 0;
+}
+.loyalNotify p {
+  margin: 0;
+  font-size: 0.8em;
+}
+.loyalWelcome {
+  background-color: #fff;
+  border: 1px solid #B2B2B2;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 0 rgba(38, 38, 38, 0.2);
+          box-shadow: 0 1px 0 rgba(38, 38, 38, 0.2);
+  padding: 20px;
+  text-align: center;
+}
+.loyalWelcome p {
+  font-size: 0.9em;
+}
+.loyalWelcome p:last-of-type {
+  margin: 0;
+}
+.loyalWelcome hr {
+  opacity: 0.8;
+  margin: 1em 0;
+}
+.loyalWelcome .btn {
+  background-color: #ffc300;
+  padding: 0.8em 2em;
+}
+.loyalCover {
+  text-align: center;
+  position: relative;
+}
+.loyalCover span {
+  display: block;
+  padding: 1em 2em;
+  background-color: #fff;
+  -webkit-clip-path: polygon(0% 50%, 5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%);
+          clip-path: polygon(0% 50%, 5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%);
+}
+.loyalCover:before {
+  content: '';
+  width: 200%;
+  height: 2px;
+  position: absolute;
+  background-color: #8a8a8a;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.starPoints {
+  background-color: #ffc300;
+  padding: 0.3em;
+  border-radius: 2em;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1;
+}
+.starPoints:before {
+  content: '\e906';
+  font-family: icomoon;
+  font-size: 1.4em;
+  display: inline-block;
+  margin-right: 3px;
+}
+.loyalBirthdayHeader {
+  background-color: #fff;
+  padding: 1em;
+  border: 1px solid #B2B2B2;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 0 rgba(38, 38, 38, 0.2);
+          box-shadow: 0 1px 0 rgba(38, 38, 38, 0.2);
+}
+.loyalBirthdayHeader i.icon-cake {
+  color: #ffc300;
+  font-size: 1.3em;
+}
+.bonusBox {
+  background-color: #fff;
+  padding: 1em;
+  border: 1px solid #B2B2B2;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 0 rgba(38, 38, 38, 0.2);
+          box-shadow: 0 1px 0 rgba(38, 38, 38, 0.2);
+}
+.bonusBox figure {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  color: #000;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #FEB67E;
+  font-size: 2em;
+  margin-right: 0.6em;
+}
+.bonusBox h5 {
+  font-size: 0.9em;
+}
+.bonusBox p {
+  font-size: 0.9em;
+}
+.referralInfoBox > div {
+  border: 2px dotted;
+  width: 48%;
+}
+.referralInfoBox > div > i[class*="icon-"] {
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  background-color: #ffc300;
+  margin-top: -3em;
+}
+.copyBox button {
+  right: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 0;
+}
+.inviteFriends {
+  position: relative;
+  z-index: 1;
+}
+.inviteFriends:after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  left: 0;
+  background: radial-gradient(circle closest-side, #FFFFFF 80%, rgba(255, 255, 255, 0) 0) 0 0px;
+  background-size: 12px 12px;
+  background-repeat: repeat-x;
+}
+.inviteFriends nav a {
+  width: 2.6em;
+  height: 2.6em;
+  border: 2px solid;
+  border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: inherit;
+  font-size: 1.2em;
+}
+.inviteDash {
+  border: 2px dotted;
+  margin-top: -2em;
+}
+.referralCouponList {
+  position: relative;
+}
+.referralCouponList:before {
+  content: '';
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 30%;
+  opacity: 0.2;
+  border-right: 1px dashed;
+}
+.rCard .date {
+  width: 50%;
+  position: relative;
+}
+.rCard .date:after {
+  content: '';
+  width: 1em;
+  height: 1em;
+  background-color: #ffc300;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 1.3em;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+.rCard .badge {
+  font-size: 1em;
+  font-weight: 500;
+}
+.rCard .coupon {
+  background-color: #E7F5FE;
+  border: 1px dashed #427BB9;
+  font-size: 1.3em;
+  position: relative;
+}
+.rCard .coupon a {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.claimView .totalClaims {
+  font-size: 1.2em;
+  text-align: center;
+  overflow: hidden;
+}
+.claimView .totalClaims .badge {
+  position: relative;
+}
+.claimView .totalClaims .badge::before,
+.claimView .totalClaims .badge::after {
+  background-color: #ccc;
+  content: '';
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+}
+.claimView .totalClaims .badge:before {
+  left: -105%;
+}
+.claimView .totalClaims .badge:after {
+  right: -105%;
+}
+.claimView .claimList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.claimView .claimCard {
+  width: 48%;
+}
+.claimView .claimCard.active {
+  width: 100%;
+}
+.claimView .claimCard .floater {
+  width: 3.7em;
+  height: 3.7em;
+  position: absolute;
+  text-align: center;
+  right: 10px;
+  padding: 3px;
+  top: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.claimView .claimCard .floater p {
+  margin: 0 0 5px;
+  border-bottom: 1px solid;
+}
+.claimView .claimCard .floater small {
+  font-size: 0.6em;
+  opacity: 0.6;
+  line-height: 1.2;
+}
+.claimView .claimCard.active {
+  background-color: #fff;
+  padding: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.claimView .claimCard.active figure {
+  width: 50%;
+  position: relative;
+}
+.claimView .claimCard.active figcaption {
+  position: absolute !important;
+  top: 20px;
+  padding: 0 !important;
+  width: 120%;
+}
+.claimView .claimCard.active figcaption span {
+  display: none;
+}
+.claimView .claimCard.active > div {
+  padding-left: 2em !important;
+}
+.claimView .claimConfirm {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.profileBlock .totalPoints {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 30px 30px 30px 0;
+}
+.profileBlock .totalPoints .icon-star {
+  font-size: 2em;
+}
+.profileBlock .totalPoints strong {
+  font-size: 1.4em;
+  font-weight: normal;
+}
+.profileBlock .totalPoints span {
+  line-height: 1.2;
+}
+.profileBlock .profilePic {
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  border: 2px dashed #fff;
+  border-radius: 50%;
+  right: 0.5em;
+  top: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 0.2em;
+  font-size: 1.5em;
+}
+.profileBlock .profilePic span {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.profileBlock .profilePic i {
+  font-size: 1.5em;
+}
+.formController {
+  position: relative;
+  padding-top: 12px;
+  margin: 15px 0;
+}
+.formController select,
+.formController input {
+  border: 1px solid #b1b1b1;
+  border-radius: 5px;
+  width: 100%;
+  padding: 20px;
+}
+.formController label {
+  background-color: #fff;
+  color: #b1b1b1;
+  font-weight: 500;
+  padding: 0 5px;
+  position: absolute;
+  left: 20px;
+  top: 0;
+}
+.profPoints .icon-star {
+  font-size: 4em;
+}
+.profPoints strong {
+  font-size: 1.8em;
+}
+.profPoints p {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.profNav a > i {
+  width: 2.5em;
+  height: 2.5em;
+  font-size: 1.5em;
+}
+.profNav a:hover {
+  text-decoration: none;
+}
+.profNav a small:before {
+  content: '';
+  width: 1em;
+  height: 1em;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  -webkit-transform: rotate(45deg) translateY(-50%);
+          transform: rotate(45deg) translateY(-50%);
 }

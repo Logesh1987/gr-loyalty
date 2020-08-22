@@ -1,7 +1,558 @@
+@theme-color: #ffc300;
+@theme-text: #fff;
+@grey: #ccc;
+
+.themeColor {
+    color: @theme-color;
+}
+.themeBg {
+    background-color: @theme-color;
+}
+.themeTextColor {
+    color: @theme-text;
+}
+.btn-theme {
+    background-color: @theme-color;
+    &:hover {
+        filter: hue-rotate(-5deg);
+    }
+}
+
+@import 'icons.css';
+
 body {
-    background-color: #f00;
-    h2 {
-        color: green;
-        font-size: 40px;
+    font-family: 'Inter', sans-serif;
+}
+
+.loyalWrapper {
+    margin: 80px auto;
+    max-width: 460px;
+    position: relative;
+    .loyalClose {
+        color: #fff;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: #000;
+        border-radius: 50%;
+        font-size: 1.5em;
+        transform: translate(50%, -50%);
+    }
+}
+.loyalUserHead {
+    overflow: hidden;
+    border-radius: 10px;
+    img {
+        width: 100%;
+    }
+}
+.loyalBody {
+    min-height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 30px 30px 0;
+}
+.loyalFooter {
+    background-color: #fff;
+    margin: 0 -30px;
+    img {
+        width: 100%;
+    } 
+}
+.loyalHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+        color: @theme-text;
+        font-size: 1.5em;
+        margin: 0;
+    }
+    > div {
+        display: flex;
+        align-items: center;
+    }
+    .loyalProfile {
+        width: 3em;
+        height: 3em;
+        margin: 0 1em;
+        display: inline-block;
+        background-color: #fff;
+        border: 2px dashed @theme-color;
+        border-radius: 50%;
+        position: relative;
+        text-align: center;
+        i {
+            color: @theme-color;
+            font-size: 1.9em;
+            transform: translateY(5px);
+            display: block;
+        }
+        span {
+            padding: 5px;
+            background-color: @theme-color;
+            border-radius: 10px;
+            color: @theme-text;
+            font-size: 0.9em;
+            line-height: 1;
+            min-width: 100%;
+            position: absolute;
+            right: 50%;
+            bottom: 0;
+            transform: translate(50%, 50%);
+        }
+    }
+    .hamMenu {
+        display: block;
+        width: 2em;
+        &:before,
+        &:after {
+          background-color: #fff;
+          content: '';
+          display: block;
+          height: 3px;
+          transition: all 200ms ease-in-out;
+        }
+        &:before {
+          box-shadow: 0 10px 0 #fff;
+          margin-bottom: 16px;
+        }
+        &.active:before {
+          box-shadow: 0 0 0 #fff;
+          transform: translateY(10px) rotate(45deg);
+        }
+        &.active:after{
+          transform: translateY(-10px) rotate(-45deg);
+        }
+    }      
+}
+.loyalMainNav {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 24px rgba(38, 38, 38, 0.3);
+    display: flex;
+    font-size: 0.9em;
+    padding: 0 0.5em;
+    margin: 2em 0;
+    a {
+        text-transform: uppercase;
+        padding: 1em;
+        flex-grow: 1;
+        text-decoration: none;
+        color: @grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        &:not(:last-child) {
+            border-right: 1px solid rgba(0,0,0,0.2);
+        }
+        &.active {
+            color: @theme-color;
+            &:after {
+                content: '';
+                position: absolute;
+                left: 5px;
+                right: 5px;
+                bottom: 0;
+                height: 4px;
+                background-color: @theme-color;
+            }
+        }
+    }
+    i {
+        font-size: 1.5em;
+    }
+    span {
+        padding-left: 0.5em;
+        color: darken(@grey, 30%);
+    }
+}
+.loyalNotify {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 30px 30px 30px 0;
+    p {
+        margin: 0;
+        font-size: 0.8em;
+    }
+}
+.loyalWelcome {
+    background-color: #fff;
+    border: 1px solid #B2B2B2;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(38, 38, 38, 0.2);
+    padding: 20px;
+    text-align: center;
+    p {
+        font-size: 0.9em;
+        &:last-of-type {
+            margin: 0;
+        }
+    }
+    hr {
+        opacity: 0.8;
+        margin: 1em 0;
+    }
+    .btn {
+        background-color: @theme-color;
+        padding: 0.8em 2em;
+    }
+}
+.loyalCover {
+    text-align: center;
+    position: relative;
+    span {
+        display: block;
+        padding: 1em 2em;
+        background-color: #fff;
+        clip-path: polygon(0% 50%, 5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%);
+    }
+    &:before {
+        content: '';
+        width: 200%;
+        height: 2px;
+        position: absolute;
+        background-color: #8a8a8a;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+.starPoints {
+    background-color: @theme-color;
+    padding: 0.3em;
+    border-radius: 2em;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    &:before {
+        content: '\e906';
+        font-family: icomoon;
+        font-size: 1.4em;
+        display: inline-block;
+        margin-right: 3px;
+    }
+}
+.loyalBirthdayHeader {
+    background-color: #fff;
+    padding: 1em;
+    border: 1px solid #B2B2B2;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(38, 38, 38, 0.2);
+    i.icon-cake {
+        color: @theme-color;
+        font-size: 1.3em;
+    }
+}
+.bonusBox {
+    background-color: #fff;
+    padding: 1em;
+    border: 1px solid #B2B2B2;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(38, 38, 38, 0.2);
+    figure {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        color: #000;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FEB67E;
+        font-size: 2em;
+        margin-right: 0.6em;
+    }  
+    h5 {
+        font-size: 0.9em;
+    }
+    p {
+        font-size: 0.9em;
+    }
+}
+.referralInfoBox {
+    > div {
+        border: 2px dotted;
+        width: 48%;
+        > i[class*="icon-"] {
+            width: 3.5em;
+            height: 3.5em;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            background-color: @theme-color;
+            margin-top: -3em;
+        }
+    }
+}
+.copyBox {
+    button {
+        right: 0;
+        top: 0;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+.inviteFriends {
+    position: relative;
+    z-index: 1;
+    &:after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 5px;
+        left: 0;
+        background: radial-gradient(circle closest-side, #FFFFFF 80%, rgba(255,255,255,0) 0) 0 0px;
+        background-size: 12px 12px;
+        background-repeat: repeat-x;
+    }
+    nav a {
+        width: 2.6em;
+        height: 2.6em;
+        border: 2px solid;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: inherit;
+        font-size: 1.2em;
+    }
+}
+.inviteDash {
+    border: 2px dotted;
+    margin-top: -2em;
+}
+.referralCouponList {
+    position: relative;
+    &:before {
+        content: '';
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 30%;
+        opacity: 0.2;
+        border-right: 1px dashed;
+    }
+
+}
+.rCard {
+    .date {
+        width: 50%;
+        position: relative;
+        &:after {
+            content: '';
+            width: 1em;
+            height: 1em;
+            background-color: @theme-color;
+            border-radius: 50%;
+            position: absolute;
+            right: 0;
+            top: 1.3em;
+            transform: translateX(50%);
+        }
+    }
+    .badge {
+        font-size: 1em;
+        font-weight: 500;
+    }
+    .coupon {
+        background-color: #E7F5FE;
+        border: 1px dashed #427BB9;
+        font-size: 1.3em;
+        position: relative;
+        a {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+}
+.claimView {
+    .totalClaims {
+        font-size: 1.2em;
+        text-align: center;
+        overflow: hidden;
+        .badge {
+            position: relative;
+            &::before,
+            &::after {
+                background-color: #ccc;
+                content: '';
+                height: 1px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+            }
+            &:before {
+                left: -105%;
+            }
+            &:after {
+                right: -105%;
+            }
+        }
+    }
+    .claimList {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .claimCard {
+        width: 48%;
+        &.active {
+            width: 100%;
+        }
+        .floater {
+            width: 3.7em;
+            height: 3.7em;
+            position: absolute;
+            text-align: center;
+            right: 10px;
+            padding: 3px;
+            top: 0;
+            transform: translateY(-50%);
+            p {
+                margin: 0 0 5px;
+                border-bottom: 1px solid;
+            }
+            small {                
+                font-size: 0.6em;
+                opacity: 0.6;
+                line-height: 1.2;
+            }
+        }
+        &.active {
+            background-color: #fff;
+            padding: 20px;
+            align-items: center;
+            figure {
+                width: 50%;
+                position: relative;
+            }
+            figcaption {
+                position: absolute !important;
+                top: 20px;
+                padding: 0 !important;
+                width: 120%;
+                span {
+                    display: none;
+                }
+            }
+            > div {
+                padding-left: 2em !important;
+            }
+        }
+    }
+    .claimConfirm {
+        background-color: rgba(0,0,0,0.5);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+}
+.profileBlock {
+    .totalPoints {
+        display: inline-flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 30px 30px 30px 0;
+        .icon-star {
+            font-size: 2em;
+        }
+        strong {
+            font-size: 1.4em;
+            font-weight: normal;
+        }
+        span {
+            line-height: 1.2;
+        }
+    }
+    .profilePic {
+        width: 3em;
+        height: 3em;
+        position: absolute;
+        border: 2px dashed #fff;
+        border-radius: 50%;
+        right: 0.5em;
+        top: 0;
+        transform: translateY(-50%);
+        padding: 0.2em;
+        font-size: 1.5em;
+        span {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+        }
+        i {
+            font-size: 1.5em;
+        }
+    }
+}
+.formController {
+    position: relative;
+    padding-top: 12px;
+    margin: 15px 0;
+    select,
+    input {
+        border: 1px solid #b1b1b1;
+        border-radius: 5px;
+        width: 100%;
+        padding: 20px;
+    }
+    label {
+        background-color: #fff;
+        color: #b1b1b1;
+        font-weight: 500;
+        padding: 0 5px;
+        position: absolute;
+        left: 20px;
+        top: 0;
+    }
+}
+.profPoints {
+    .icon-star {
+        font-size: 4em;
+    }
+    strong {
+        font-size: 1.8em;
+    }
+    p {
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+}
+.profNav {
+    a {
+        > i {
+            width: 2.5em;
+            height: 2.5em;
+            font-size: 1.5em;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+        small:before {
+            content: '';
+            width: 1em;
+            height: 1em;
+            border-top: 1px solid;
+            border-right: 1px solid;
+            position: absolute;
+            right: 1em;
+            top: 50%;
+            transform: rotate(45deg) translateY(-50%);
+        }
     }
 }

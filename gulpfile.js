@@ -44,6 +44,7 @@ function serve() {
     });
 
     gulp.watch('./images/*', images)
+    gulp.watch('./*.html').on('change', browserSync.reload);
     gulp.watch('./styles/*.less', css).on('change', browserSync.reload);
     gulp.watch('./scripts/!(main).js', javascript).on('change', browserSync.reload);
 }
