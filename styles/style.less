@@ -63,6 +63,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     h1 {
         color: @theme-text;
         font-size: 1.5em;
@@ -105,6 +106,8 @@ body {
     .hamMenu {
         display: block;
         width: 2em;
+        position: relative;
+        z-index: 5;
         &:before,
         &:after {
           background-color: #fff;
@@ -124,7 +127,45 @@ body {
         &.active:after{
           transform: translateY(-10px) rotate(-45deg);
         }
-    }      
+    }
+    .menuNav {
+        box-shadow: 0 0 0 500em rgba(72, 72, 72, 0.8);
+        position: absolute;
+        right: 0;
+        top: 130%;
+        display: flex;
+        flex-direction: column;
+        min-width: 300px;
+        z-index: 2;
+        a {
+            color: #828282;
+            padding: 1em 0;
+            line-height: 1;
+            text-decoration: none;
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                right: 0.5em;
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+                width: 0.5em;
+                height: 0.5em;
+                border-top: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+            }
+            &:not(:last-child) {
+                border-bottom: 1px solid #ccc;
+            }
+            &.active {
+                color: #000;
+            }
+        }
+        i {
+            font-size: 1.2em;
+            padding-right: 0.5em;
+        }
+    }
 }
 .loyalMainNav {
     background-color: #fff;
