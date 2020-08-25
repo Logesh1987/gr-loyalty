@@ -11,7 +11,6 @@ gratisfaction.controller('grController', function($scope) {
     }
 
     var mySwiper = new Swiper('.swiper-container', {
-        autoHeight: true,
         pagination: {
             el: '.swiper-pagination',
             clickable: true
