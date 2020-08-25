@@ -9,6 +9,8 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="scripts/main.js"></script>
 </head>
 
@@ -77,13 +79,154 @@
                                 Get 1 points for every $1 you spend!
                             </span>
                         </div>
-                        <div class="loyalBirthdayHeader d-flex justify-content-between">
-                            <div>
-                                <i class="icon-cake"></i>
-                                <span class="pl-2">Enter your birthday</span>
+                        <div class="swiper-container earnSlider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="loyalBirthdayHeader d-flex justify-content-between"
+                                        data-toggle="collapse" href="#earn1" role="button" aria-expanded="false"
+                                        aria-controls="earn1">
+                                        <div>
+                                            <i class="icon-cake"></i>
+                                            <span class="pl-2">Enter your birthday</span>
+                                        </div>
+                                        <div>
+                                            <div class="starPoints">100</div>
+                                        </div>
+                                    </div>
+                                    <div class="collapse mx-3" id="earn1">
+                                        <div class="card card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="loyalBirthdayHeader d-flex justify-content-between"
+                                        data-toggle="collapse" href="#earn2" role="button" aria-expanded="false"
+                                        aria-controls="earn2">
+                                        <div>
+                                            <i class="icon-cake"></i>
+                                            <span class="pl-2">Enter your birthday</span>
+                                        </div>
+                                        <div>
+                                            <div class="starPoints">100</div>
+                                        </div>
+                                    </div>
+                                    <div class="collapse mx-3" id="earn2">
+                                        <div class="card card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="loyalBirthdayHeader d-flex justify-content-between"
+                                        data-toggle="collapse" href="#earn3" role="button" aria-expanded="false"
+                                        aria-controls="earn3">
+                                        <div>
+                                            <i class="icon-cake"></i>
+                                            <span class="pl-2">Enter your birthday</span>
+                                        </div>
+                                        <div>
+                                            <div class="starPoints">100</div>
+                                        </div>
+                                    </div>
+                                    <div class="collapse mx-3" id="earn3">
+                                        <div class="card card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                            richardson ad squid.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <div class="starPoints">100</div>
+                            <div class="swiper-pagination-wrap">
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <!-- <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div> -->
+                        </div>
+                        <div class="accordion loyalEarn my-4" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center bg-white collapsed"
+                                    id="headingOne" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="false" aria-controls="collapseOne">
+                                    <div>
+                                        <i class="icon-play-right1"></i>
+                                        <span class="pl-2">Enter your birthday</span>
+                                    </div>
+                                    <div>
+                                        <i
+                                            class="icon-claim d-inline-flex align-items-center justify-content-center mx-2 border border-dark rounded-circle"></i>
+                                        <div class="starPoints">100</div>
+                                    </div>
+                                </div>
+
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch et. Nihil anim keffiyeh helvetica.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center bg-white collapsed"
+                                    id="headingTwo" data-toggle="collapse" data-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                    <div>
+                                        <i class="icon-play-right1"></i>
+                                        <span class="pl-2">Enter your birthday</span>
+                                    </div>
+                                    <div>
+                                        <i
+                                            class="icon-claim d-inline-flex align-items-center justify-content-center mx-2 border border-dark rounded-circle"></i>
+                                        <div class="starPoints">100</div>
+                                    </div>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+                                        you probably haven't heard of them accusamus labore sustainable VHS.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center bg-white collapsed"
+                                    id="headingThree" data-toggle="collapse" data-target="#collapseThree"
+                                    aria-expanded="false" aria-controls="collapseThree">
+                                    <div>
+                                        <i class="icon-play-right1"></i>
+                                        <span class="pl-2">Enter your birthday</span>
+                                    </div>
+                                    <div>
+                                        <i
+                                            class="icon-claim d-inline-flex align-items-center justify-content-center mx-2 border border-dark rounded-circle"></i>
+                                        <div class="starPoints">100</div>
+                                    </div>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+                                        you probably haven't heard of them accusamus labore sustainable VHS.
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <p class="text-center my-4">

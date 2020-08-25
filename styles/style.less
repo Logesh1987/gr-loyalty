@@ -262,6 +262,73 @@ body {
         transform: translateX(-50%);
     }
 }
+.loyalEarn {
+    .card-header {
+        cursor: pointer;
+        .icon-play-right1 {
+            display: inline-block;
+            transition: transform 0.4s;
+        }
+        &:not(.collapsed) {
+            .icon-play-right1 {
+                transform: rotate(90deg);
+            }
+        }
+        .icon-claim {    
+            width: 1.5em;
+            height: 1.5em;
+            font-size: 1.4em;
+            line-height: 1;
+        }
+    }
+}
+.earnSlider {
+    &.swiper-container {
+        padding-bottom: 40px;
+        .swiper-pagination-wrap {
+            position: absolute;
+            width: 100%;
+            bottom: 10px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .swiper-pagination {
+            width: auto;
+            position: relative;
+            padding: 0 10px;
+            display: inline-block;
+            &:after,
+            &:before {
+                content: '';
+                width: 80vw;
+                height: 1px;
+                background-color: #ccc;
+                position: absolute;
+                top: 50%;
+            }
+            &:before {
+                left: 0;
+                transform: translateX(-100%);
+            }
+            &:after {
+                right: 0;
+                transform: translateX(100%);
+            }
+        }
+    }
+    .swiper-wrapper {
+        height: auto;
+    }
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        margin: 0 3px;
+        &-active {
+            background-color: #fff;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+        }
+    }
+}
 .starPoints {
     background-color: @theme-color;
     padding: 0.3em;
